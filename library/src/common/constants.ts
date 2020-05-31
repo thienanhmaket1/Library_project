@@ -1,0 +1,98 @@
+
+export const permission = [
+    { permission_code: '99', permission_title: 'Admin' }, // full permission
+    { permission_code: '01', permission_title: 'Usernormal' }, // usernormal
+]
+export const defaultTopItems = [
+    {
+        title: 'Home',
+        link: 'orders',
+        icon: 'home',
+    },
+]
+
+export const defaultBottomItems = [
+    {
+        title: 'Log Out',
+        icon: 'log-out',
+        id: 'log_out',
+    },
+]
+
+export const defaultMessageConfig = {
+    content: '',
+    title: '',
+    status: 'primary',
+    position: 4,
+    duration: 3000,
+}
+
+
+export const usernormalItems = [
+    {
+        title: 'Tìm kiếm tài liệu',
+                expanded: true,
+                children: [
+                    {
+                        title: 'Tài liệu',
+                        link: 'search-document',
+                        icon: 'search',
+                    },
+                ]
+    },
+    {
+        title: 'Tìm kiếm sách',
+                expanded: true,
+                children: [
+                    {
+                        title: 'Sách',
+                        link: 'search-book',
+                        icon: 'search',
+                    },
+                ]
+    }
+                
+]
+
+export const adminItems: any = [
+            {
+                title: 'Sách',
+                expanded: true,
+                children: [
+                    {
+                        title: 'Loại tài liệu',
+                        link: '../app/dashboard/book/category',
+                        icon: 'calendar',
+                    },
+                    {
+                        title: 'Tài liệu',
+                        link: '../app/dashboard/book/document',
+                        icon: 'document',
+                    },
+                ], 
+            },
+            {
+                title: 'Cửa hàng sách',
+                expanded: true,
+                children: [
+                    {
+                        title: 'Chuyên ngành',
+                        link: '../app/dashboard/bookstore/specialized',
+                        icon: 'calendar',
+                    },
+                    {
+                        title: 'Sách chuyên ngành',
+                        link: '../app/dashboard/bookstore/specialized-book',
+                        icon: 'book',
+                    },
+                ], 
+            },
+            {
+                title: 'Quản lý tài khoản',
+                link: 'users',
+                icon: 'person',
+            }, 
+]
+
+
+

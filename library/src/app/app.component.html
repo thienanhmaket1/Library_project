@@ -1,0 +1,39 @@
+<nb-layout>
+  <nb-layout-header fixed style="height: 76px !important;">
+      <div
+          style="
+              display: flex;
+              flex: 1;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+          "
+      >
+          <span style="font-size: 22px; font-weight: bold;">Quản lý Thư viện</span>
+          <div style="display: flex; flex-direction: row;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <span>{{ dateTimeInString(now) }}</span>
+            </div>
+            <div style="display: flex; flex-direction: row; font-size: 13px; font-weight: bold; margin: 0 0 0 20px;" *ngIf="user">
+                <div style="display: flex; flex-direction: row; cursor: pointer;">
+                    <div style="display: flex; flex-direction: column; margin-right: 10px;">
+                        <div>
+                           <p>Chào! {{ user.user_fullname }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </nb-layout-header>
+
+  <nb-layout-column style="padding: 5px 0px;">
+      <div id="div-main-layout">
+          <router-outlet></router-outlet>
+      </div>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed style="height: 50px !important;">
+      © Trường cao đẳng Công Thương Tp.Hồ Chí Minh
+  </nb-layout-footer>
+</nb-layout>

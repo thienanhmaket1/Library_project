@@ -1,0 +1,13 @@
+<div class="div-container">
+    <div class="div-login" [formGroup]="loginFormGroup">
+        <h1>Đăng nhập</h1>
+        <div style="margin-top: 20px; width: 100%;">
+            <input nbInput fullWidth placeholder="Nhập tài khoản" formControlName="usernameFormControl" required />
+        </div>
+        <div style="margin-top: 15px; width: 100%;">
+            <input (keyup.enter)="login()" type="password" nbInput fullWidth placeholder="******" formControlName="passwordFormControl" required />
+        </div>
+        <button (click)="login()" nbButton style="margin-top: 15px; width: 100%;">Đăng nhập</button>
+        <p>Bạn đã có tài khoản?<a style="text-decoration: none;" href="http://localhost:4200/register">Đăng ký</a></p>
+    </div>
+</div>
