@@ -5,15 +5,15 @@ export const permission = [
 ]
 export const defaultTopItems = [
     {
-        title: 'Home',
-        link: 'orders',
+        title: 'Trang chủ',
+        link: 'book/category',
         icon: 'home',
     },
 ]
 
 export const defaultBottomItems = [
     {
-        title: 'Log Out',
+        title: 'Đăng xuất',
         icon: 'log-out',
         id: 'log_out',
     },
@@ -51,7 +51,7 @@ export const usernormalItems = [
                     },
                 ]
     }
-                
+
 ]
 
 export const adminItems: any = [
@@ -67,9 +67,9 @@ export const adminItems: any = [
                     {
                         title: 'Tài liệu',
                         link: 'book/document',
-                        icon: 'document',
+                        icon: 'book',
                     },
-                ], 
+                ],
             },
             {
                 title: 'Cửa hàng sách',
@@ -83,15 +83,15 @@ export const adminItems: any = [
                     {
                         title: 'Sách chuyên ngành',
                         link: 'bookstore/specialized-book',
-                        icon: 'book',
+                        icon: 'book-open',
                     },
-                ], 
+                ],
             },
             {
                 title: 'Quản lý tài khoản',
-                link: 'users',
+                link: 'user',
                 icon: 'person',
-            }, 
+            },
 ]
 
 

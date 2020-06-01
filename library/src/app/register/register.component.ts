@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (!this.registerFormGroup.valid) {
-        this.toastService.show('Username and password is required !', 'Error', {
+        this.toastService.show('Tài khoản và mật khẩu là bắt buộc!', 'Lỗi', {
             status: 'danger',
             position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
         })
@@ -42,11 +42,11 @@ export class RegisterComponent implements OnInit {
     const {
         useridFormControl,
         usernameFormControl,
-        passwordFormControl,
         fullnameFormControl,
         emailFormControl,
         phoneFormControl,
         permissionFormControl,
+        passwordFormControl,
     } = this.registerFormGroup.getRawValue()
     console.log(this.registerFormGroup.getRawValue())
     const obj = {
@@ -58,17 +58,17 @@ export class RegisterComponent implements OnInit {
         user_permission_code: permissionFormControl,
         user_password: passwordFormControl,
     }
-    
+
     this.registerService.register(obj).subscribe(
         (res) => {
             if (res.code === 0) {
-                this.toastService.show(`Create successfully`, 'Success', {
+                this.toastService.show(`Tạo tài khoản thành công`, 'Thành công', {
                     status: 'primary',
                     position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
                 })
             }
             if (res.code === 5) {
-                this.toastService.show(`User already exists`, 'Error', {
+                this.toastService.show(`Tài khoản đã tồn tại`, 'Lỗi', {
                     status: 'danger',
                     position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
                 })

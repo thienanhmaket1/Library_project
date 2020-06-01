@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   usernormalItems: NbMenuItem[] = usernormalItems
   items = []
 
-  constructor(private nbMenuService: NbMenuService, private router: Router, private authService: AuthenticationService, private sharedService: SharedService) { 
+  constructor(private nbMenuService: NbMenuService, private router: Router, private authService: AuthenticationService, private sharedService: SharedService) {
     this.sharedService.getMenuStatus().subscribe((res) => {
         this.menuStatus = res
     })
@@ -31,11 +31,23 @@ export class MenuComponent implements OnInit {
         }
     })
 
-    this.changeToNormalMode() 
+    this.changeToNormalMode()
   }
 
   changeToNormalMode() {
-    this.items = adminItems
+              const { user_permission_code } = this.authService.getUserValue
+              console.log(this.authService.getUserValue)
+        switch (user_permission_code) {
+            case '01':
+                this.items = this.usernormalItems
+                break
+            default:
+                this.items = this.adminItems
+                break
+        }
+
+
+    // this.items = adminItems
     this.items = [...defaultTopItems, ...this.items, ...defaultBottomItems]
     this.sharedService.setMenuStatus('normal')
     }

@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   login() {
     if (!this.loginFormGroup.valid) {
         this.sharedService.showMessage({
-            content: 'Username and password is required !',
-            title: 'Error',
+            content: 'Tài khoản và mật khẩu là bắt buộc!',
+            title: 'Lỗi',
             status: 'danger',
         })
 
@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
             } = res
             if (res.code === 1) {
                 this.sharedService.showMessage({
-                    content: 'Username or password is incorrect or User does not exist',
-                    title: 'Error',
+                    content: 'Tài khoản hoặc mật khẩu sai hoặc tài khoản không tồn tại',
+                    title: 'Lỗi',
                     status: 'danger',
                 })
 
@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit {
 
             if (res.code === 0) {
                 this.sharedService.showMessage({
-                    content: 'Login successfully',
-                    title: 'Success',
+                    content: 'Đăng nhập thành công',
+                    title: 'Xin chào',
                     status: 'primary',
                 })
             }

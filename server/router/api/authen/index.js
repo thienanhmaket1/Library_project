@@ -53,11 +53,11 @@ authenRouter.post('/login', async(req, res) => {
 
 authenRouter.post('/verify-token', authenMiddleWare, async(req, res) => {
     return res.status(200).json({
-            code: 0,
-            data: {
-                user: req.user,
-            },
-        })
+        code: 0,
+        data: {
+            user: req.user,
+        },
+    })
 })
 
 // authenRouter.post('/register', async(req, res) => {
@@ -117,22 +117,22 @@ authenRouter.post('/register', async(req, res) => {
             user_fullname,
             user_email,
             user_phone,
-            user_permission_code
+            user_permission_code,
         } = req.body
-        // const arrCells = [
-        //     user_id,
-        //     user_username,
-        //     user_password,
-        //     user_fullname,
-        //     user_email,
-        //     user_phone,
-        //     user_permission_code,
-        // ]
+            // const arrCells = [
+            //     user_id,
+            //     user_username,
+            //     user_password,
+            //     user_fullname,
+            //     user_email,
+            //     user_phone,
+            //     user_permission_code,
+            // ]
         const sql = `
-            INSERT INTO tbl_users (user_id, user_username, user_password, user_fullname, user_email, user_phone, user_permission_code)
+            INSERT INTO tbl_users (user_id, user_username,user_fullname,  user_email, user_phone, user_permission_code, user_password)
             VAlUES ('${user_id}','${user_username}', '${user_fullname}', '${user_email}', '${user_phone}', '${user_permission_code}', '${user_password}')
             RETURNING *;
-        `//VAlUES ($1, $2, $3, $4, $5, $6, $7)
+        ` //VAlUES ($1, $2, $3, $4, $5, $6, $7)
         console.log(sql)
         const result = await db.postgre.runWithPrepare(sql).catch((error) => {
             return error
