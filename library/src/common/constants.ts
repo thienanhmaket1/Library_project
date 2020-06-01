@@ -35,7 +35,7 @@ export const usernormalItems = [
                 children: [
                     {
                         title: 'Tài liệu',
-                        link: 'search-document',
+                        link: 'book/search-document',
                         icon: 'search',
                     },
                 ]
@@ -46,7 +46,7 @@ export const usernormalItems = [
                 children: [
                     {
                         title: 'Sách',
-                        link: 'search-book',
+                        link: 'bookstore/search-book',
                         icon: 'search',
                     },
                 ]
@@ -61,12 +61,12 @@ export const adminItems: any = [
                 children: [
                     {
                         title: 'Loại tài liệu',
-                        link: '../app/dashboard/book/category',
+                        link: 'book/category',
                         icon: 'calendar',
                     },
                     {
                         title: 'Tài liệu',
-                        link: '../app/dashboard/book/document',
+                        link: 'book/document',
                         icon: 'document',
                     },
                 ], 
@@ -77,12 +77,12 @@ export const adminItems: any = [
                 children: [
                     {
                         title: 'Chuyên ngành',
-                        link: '../app/dashboard/bookstore/specialized',
+                        link: 'bookstore/specialized',
                         icon: 'calendar',
                     },
                     {
                         title: 'Sách chuyên ngành',
-                        link: '../app/dashboard/bookstore/specialized-book',
+                        link: 'bookstore/specialized-book',
                         icon: 'book',
                     },
                 ], 

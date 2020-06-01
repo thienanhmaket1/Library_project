@@ -62,7 +62,6 @@ logout(willNavigate = false) {
 
 isLoggedIn() {
     if (!!this.getUserValue) {
-        // return of(this.user)
         return this.user
     }
     const token = this.getToken()
