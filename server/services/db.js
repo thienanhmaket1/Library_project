@@ -43,6 +43,16 @@ const postgre = {
                     // query fail
                     throw error
                 }
+                // Filelog
+                // const now = new Date()
+                // const subFile = `/logs/${now.getMonth() + 1}${now.getFullYear()}postgrelog.txt`
+                // const content = now + query
+                // const file = path.join(__dirname, subFile)
+                // try {
+                //     fs.appendFileSync(file, content)
+                // } catch (err) {
+                //     console.error(err)
+                // }
 
                 return result
             })

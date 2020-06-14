@@ -1,10 +1,10 @@
-const authenMiddleWare = require('./authen')
+const permissionsMiddleWare = require('./permissions')
 const errorMiddleWare = require('./error')
 const timeMiddleWare = require('./time')
 const logMiddleWare = require('./log')
 
 module.exports = {
-    authenMiddleWare,
+    permissionsMiddleWare,
     errorMiddleWare,
     timeMiddleWare,
     logMiddleWare,

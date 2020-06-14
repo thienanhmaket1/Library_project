@@ -8,7 +8,7 @@ const middleWares = require('../../middlewares')
 
 apiRouter.use('/authen', authenRouter)
 
-apiRouter.post('/*', middleWares.authenMiddleWare)
+apiRouter.post('/*', middleWares.permissionsMiddleWare.authenMiddleware)
 
 
 module.exports = apiRouter

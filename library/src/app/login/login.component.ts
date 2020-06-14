@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     if (!this.loginFormGroup.valid) {
         this.sharedService.showMessage({
             content: 'Tài khoản và mật khẩu là bắt buộc!',
-            title: 'Lỗi',
+            title: 'Thông báo',
             status: 'danger',
         })
 
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
             if (res.code === 1) {
                 this.sharedService.showMessage({
                     content: 'Tài khoản hoặc mật khẩu sai hoặc tài khoản không tồn tại',
-                    title: 'Lỗi',
+                    title: 'Thông báo',
                     status: 'danger',
                 })
 

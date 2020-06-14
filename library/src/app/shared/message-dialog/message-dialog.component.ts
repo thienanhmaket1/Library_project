@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
 @Component({
@@ -7,6 +7,8 @@ import { NbDialogRef } from '@nebular/theme';
   styleUrls: ['./message-dialog.component.scss']
 })
 export class MessageDialogComponent implements OnInit {
+  
+  @Input() message: any
 
   constructor(public selfDialog: NbDialogRef<Component>,) { }
 

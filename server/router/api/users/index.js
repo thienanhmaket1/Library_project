@@ -6,5 +6,8 @@ const manageUsersRouter = require('./manage-users')
 const crypto = require('../../../services/crypto')
 const db = require('../../../services/db')
 
+usersRouter.use('/manage-users', manageUsersRouter)
+
+
 
 module.exports = usersRouter

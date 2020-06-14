@@ -81,7 +81,7 @@ export const adminItems: any = [
                         icon: 'calendar',
                     },
                     {
-                        title: 'Sách chuyên ngành',
+                        title: 'Sách CN',
                         link: 'bookstore/specialized-book',
                         icon: 'book-open',
                     },
@@ -90,7 +90,7 @@ export const adminItems: any = [
             {
                 title: 'Quản lý tài khoản',
                 link: 'user',
-                icon: 'person',
+                icon: 'people',
             },
 ]
 

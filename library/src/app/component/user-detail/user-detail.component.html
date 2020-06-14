@@ -1,1 +1,51 @@
-<p>user-detail works!</p>
+<nb-card class="nb-card-dialog" style="width: 450px;">
+    <nb-card-header style="
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        ">
+        <h4>Chi tiết</h4>
+    </nb-card-header>
+
+    <nb-card-body *ngIf="isViewing">
+        <nb-list>
+            <nb-list-item *ngFor="let row of rows" style="padding: 1rem;">
+                <div style="flex: 1; display: flex; justify-content: flex-start; align-items: center;">
+                    {{ translate(row) }}
+                </div>
+                <div style="flex: 1.75; display: flex; justify-content: flex-start; align-items: center;">
+                    <span>{{ this.data[row] }}</span>
+                </div>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+
+    <nb-card-body *ngIf="isEditing || isCreating">
+        <nb-list [formGroup]="editUserFormGroup">
+            <nb-list-item *ngFor="let row of rows" style="padding: 1rem;">
+                <div style="flex: 1; display: flex; justify-content: flex-start; align-items: center;">
+                    {{ translate(row) }}
+                </div>
+                <div style="flex: 1.75; display: flex; justify-content: flex-start; align-items: center;" *ngIf="row !== 'column_permission_code'">
+                    <input type="{{ inputType }}" style="margin-top: 5px;" nbInput fullWidth [value]="this.data[row]" autofocus [formControlName]="row" [readonly]="isReadOnly" />
+                </div>
+                <div style="flex: 1.75; display: flex; justify-content: flex-start; align-items: center;" *ngIf="row === 'column_permission_code'">
+                    <nb-select placeholder="Permission" [formControlName]="row" [selected]="this.data[row]">
+                        <nb-option value="99">Quản trị viên</nb-option>
+                        <nb-option value="01">Người dùng</nb-option>
+                    </nb-select>
+                </div>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+
+    <nb-card-footer style="display: flex; justify-content: space-evenly;" *ngIf="isEditable">
+        <button *ngIf="!isEditing" style="flex: 0.35" nbButton status="danger" (click)="deleteUser()">Xóa</button>
+        <button *ngIf="!isEditing" style="flex: 0.35" nbButton status="info" (click)="editUser()">Sửa</button>
+        <button *ngIf="isEditing" style="flex: 0.3" nbButton status="info" (click)="saveUser()">Lưu</button>
+    </nb-card-footer>
+
+    <nb-card-footer style="display: flex; justify-content: space-evenly;" *ngIf="isCreating">
+        <button style="flex: 0.3" nbButton status="success" (click)="createUser()">Tạo</button>
+    </nb-card-footer>
+</nb-card>
